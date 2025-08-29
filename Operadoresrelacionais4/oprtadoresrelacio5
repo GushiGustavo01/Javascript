@@ -1,0 +1,10 @@
+let idade = 18;
+
+console.log(idade > 18);  // false
+console.log(idade < 18);  // false
+console.log(idade >= 18); //true
+console.log(idade <= 18); // true
+console.log(idade == "18");  // true (comparação apenas de valor)
+console.log(idade === "18"); // false (comparação de valor e tipo)
+console.log(idade != 18);
+console.log(idade !== 18);
