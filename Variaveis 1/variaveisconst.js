@@ -5,6 +5,10 @@ console.log(nome);
 
 // Mudando valor de uma variavel const
 
-nome = "maria";
+nome = "maria";  // O valor de const não muda
+
+
+
+
 
 
