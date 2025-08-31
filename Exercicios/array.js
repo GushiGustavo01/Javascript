@@ -15,7 +15,7 @@ let nome2= ["Gustavo", "Kelen", "Mia", "Kirion","Tapioca"];
 for(let i in nome2){
     console.log(i);
     console.log(nome2[i]);
-
+sdsd
 if(nome2[i] == "Gustavo" || nome2[i] == "gustavo"){
     console.log(i);
     
