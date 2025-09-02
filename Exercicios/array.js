@@ -11,8 +11,8 @@ for(let i in nome1){
 
 let nome2= ["Gustavo", "Kelen", "Mia", "Kirion","Tapioca"];
 
-let possueCNH = "sim"
- possueCNH === "sim" && idade >= 18
+
+
 console.log(``);
 console.log(nome2[1]);
 console.log(nome2[2]);
