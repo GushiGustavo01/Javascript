@@ -3,9 +3,9 @@
 let nome1 = ["Gustavo", "Kelen", "Mia", "Kirion","Tapioca"];
 
 
-for(let i in nome1){
-    console.log(i);
-    console.log(nome1[i]);
+for( let nome of nome1){
+
+    console.log(nome);
 
 }
 

@@ -18,7 +18,3 @@ for( let i = 1; i <= 10; i++){
 //console.log(`${2} x ${2}` = ${2 * 2} // mostre
 
 //}
-
-if(se ca){
-
-}

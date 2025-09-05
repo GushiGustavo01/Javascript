@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+</head>
+<body>
+
+    <h1>Conversor de Dólar!</h1>
+
+     <input  type="number" placeholder="Valor em Real">
+
+     <button onclick="converter()">Converter</button>
+
+     <p></p>
+    
+</body>
+<script>
+ 
+    function converter(){
+
+       const valorj = Number(document.querySelector("input").value) ;
+        
+        console.log(valorj);
+
+         console.log(typeof(valorj));
+
+         document.querySelector("p").textContent = `valor de dolar é ${valorj * 5}`;
+
+
+
+           
+
+    }
+    //Criar evento no botão (onclick)
+    //Criar função
+    //Testar e ver se evento esta achando a função
+    //Selecionar input
+    //pegar valor
+    //transformar valor em número
+    //fazer a lógica
+    //Exibir na tela
+
+
+</script>
+</html>
+
