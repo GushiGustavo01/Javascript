@@ -1,0 +1,17 @@
+Estudos de Dom.
+
+0.1 Criar arquivo HTML.
+0.2 Abrir a tag de script depois do Body.
+0.3 Abrir a tag button para criar evento onclick com o nome da função a ser chamada.
+0.4 Criar a função dentro da tag script referente ao nome do programa desejado.
+0.5 Testar e ver se o evento click esta chamando a função.
+
+1 Selecionar os elementos 
+1.1 Se for input capturar o valor.
+1.2 Se for valor Numérico converter para seu tipo.
+1.3 Adiciona esse valor em uma constante.
+
+
+
+2 Trabalhar a lógica do programa.
+3 Mostrar valor na tela do cliente.

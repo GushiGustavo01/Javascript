@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM escrever na tela</title>
+</head>
+<body>
+    <style>
+
+    </style>
+
+    <h1>Olá estou alterando o valor</h1>
+    <h2 >OI</h2>
+   
+    <span></span> 
+    
+    <button onclick="escrever()">Enviar</button>
+</body>
+
+<script>
+    function escrever(){
+        
+        const h1j = document.querySelector("h1");
+        const h2j = document.querySelector("h2");
+
+      h1j.textContent = "Aqui estou alterando o valor do texto do H1\n.";
+      h2j.innerHTML = "<p> Aqui estou mudando meu h2 para um paragráfo</p>";
+   
+      
+
+      
+    }
+</script>
+</html>

@@ -35,13 +35,13 @@ function calcular(){
  
 
 
-    const nomeJ  = (document.getElementById("nomeH").value);
+    const nomeJ  = document.getElementById("nomeH").value;
     const nota1J = Number(document.getElementById("nota1H").value);
     const nota2J = Number(document.getElementById("nota2H").value);
     const nota3J = Number(document.getElementById("nota3H").value);
 
 
-  
+  console.log(nomeJ);
 
      let media = (nota1J + nota2J + nota3J)/3;
 
