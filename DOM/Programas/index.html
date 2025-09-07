@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="media.css">
+   
+    <title>Media do Aluno</title>
+</head>
+<body>
+    <h1>Media das Notas do Alunos</h1>
+   
+    <main>
+        <div>
+            <label for="Nota">Nota:  </label>
+                <input type="number">
+                <button id="btn1" onclick="adicionarNotas()">Adicionar</button>
+        </div>
+        <textarea name="quadro" id=""></textarea>
+    
+        <div><button id="btn2">Calcular Média</button></div>
+
+        <span>A média é:</span>
+
+
+       
+
+    </main>
+    <footer>
+        
+        <div id="icons">
+            <i class="bi bi-info-square-fill"></i>
+        </div>
+
+    </footer>
+    
+</body>
+<script>
+
+    function adicionarNotas(){
+        const notasJ = Number(document.querySelector("input").value);
+        const arrayJ = [];
+        
+        // for(let i = 0; arrayJ.length <= 2; i++){
+        //    console.log(arrayJ[i] = notasJ);
+        // }
+        
+
+        
+        console.log(arrayJ.push(notasJ));
+        console.log(arrayJ);
+
+       
+        
+
+       
+        
+    }
+
+
+</script>
+</html>
