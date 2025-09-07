@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,10 @@
         </div>
         <textarea name="quadro" id="quadro"></textarea>
     
-        <div><button id="btn2" onclick="calcularMedia()">Calcular Média</button></div>
+        <div>
+            <button id="btn2" onclick="calcularMedia()">Calcular Média</button>
+            <button id="btn3"></button>
+        </div>
 
         <span>A média é:</span>
 
@@ -30,63 +33,50 @@
     <footer>
         
         <div id="icons">
-            <i class="bi bi-info-square-fill"></i>
+            <i id="t" class="bi bi-info-square-fill"></i>
         </div>
 
     </footer>
-
-
-    
 </body>
-<script>
-    //Pegar 3 valores em um único campo de input ao adicionar a primeira nota o campo limpa para 
-    // inserir a segunda  e se repete ate a 3 nota limitando apenas 3 incerção de dados.
 
-    // ARREI CRIADO FORA   
-    const arrayJ = [];
+<script> 
+     
+        const arrayJ = [];
 
-
-
-        function adicionarNotas(){
-        // PRIMEIRO PEGO O INPUT SEM O VALOR POIS TEMOS QUE TER DUAS VARIÁVEIS DIFERENTES UMA PARA A SELEÇÃO DO INPUT E OUTRA PARA O VALOR DO INPUT, POIS ASSIM PODEMOS REESCREVER O VALOR DO INPUT COMO " APAGADO", ASSIM QUANDO DIGITARMOS O PRIMEIRO VALOR O CAMPO APAGA E FOCA PARA PODERMOS COLOCAR O SEGUNDO VALOR.
+    function adicionarNotas(){
+       
         const inputJ = document.querySelector("input"); 
         const textareaJ = document.querySelector("textarea");
         const  divj = document.querySelector("div");
 
-       
+        let valorJ = inputJ.valueAsNumber; 
         
-        //AQUI A VARIÁVEL DO VALOR DO INPUT JÁ CONVERTENDO EM NÚMEROS
-        let valorJ = inputJ.valueAsNumber; // Se o usuário não digitar nada ele recebe NaN (Not-a Number)  então o if não valida. 
-
-        // const arrayJ = []; O ARREIY NÃO PODE SER CRIADO DENTRO DA FUNÇÃO POIS NA PRIMEIRA VER QUE ELE FOR ADICIONADO O VALOR COM A CHAMADA DA FUNÇÃO QUANDO FOR CHAMADA A SEGUNDA VEZ ELE SOBREESCREVE REINICIANDO O ARREI E FALANDO QUE ELE ESTA VAZIO E DEPOIS ADICIONA O OUTRO NÚMERO. ||iNPORTANTE|| 
+        if( !isNaN(valorJ) && arrayJ.length <= 2){
         
-        
-    
-       if( !isNaN(valorJ) && arrayJ.length <= 2){
-
-       //ADICIONANDO O VALOR DO INPUT NO ARRAY
-       arrayJ.push(valorJ);
-       
-
-      //LIMPANDO O CAMPO DO INPUT PARA INSERIR OUTRO DADO E FOCANDO NO MESMO.
-      inputJ.value = "";
-      inputJ.focus();
+        arrayJ.push(valorJ);
+        inputJ.value = "";
+        inputJ.focus();
 
      
 
       textareaJ.style = "font-size: 18px; padding:10px;"
       textareaJ.innerHTML += ` Sua nota é: ${valorJ}.\n`;
    
-       arrayJ.length === 3 ? divj.innerHTML = "<p style='text-align:center; padding: 0px 0px 5px 0px; color: green;'> Notas adiconadas com sucesso!!</p>" : console.log("carregar uma barra");
+      arrayJ.length === 3 ? divj.innerHTML = "<p style='text-align:center; padding: 0px 0px 5px 0px;'> Notas adicionadas! </p> " : console.log("carregar uma barra");
 
-
-  
-    
 }
 
     }
 
     function calcularMedia(){
+         const iconsJ = document.querySelector("#icons");
+         const spanJ = document.querySelector("span");
+         if( !isNaN(arrayJ)){
+
+            spanJ.innerText = "Digite um valor no campo Notas!!";
+
+         }else{
+
                     let valoresJ = 0;
                 for(let i in arrayJ){
 
@@ -95,11 +85,37 @@
                 
                 }
 
-                    console.log(valoresJ);
-      
-       
+                let media= valoresJ/3;
+
+                if(media >= 7){
+                      spanJ.style = "color:green;";
+                    spanJ.innerText =`Sua aprovação veio sua média é ${media}! `;
+                    iconsJ.innerHTML = `<i class="bi bi-check-circle-fill" style="color:green;"></i>`
+                    
+                      
+
+                }else if(media < 7){
+                     spanJ.style = "color:red;";
+                     spanJ.innerText =`Você foi reprovado sua media é ${media}! `;
+                     iconsJ.innerHTML = `<i class="bi bi-x-circle-fill" style="color:red;"></i>`;
+                       const btn2J = document.querySelector("#btn2");
+                       
+                    
+
+                }
+
+         }
+        
        
         }
+        function reset(){
 
+          console.log("oii");
+
+            arrayJ = []
+
+
+        }
+ 
 </script>
 </html>
