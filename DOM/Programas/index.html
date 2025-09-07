@@ -12,14 +12,14 @@
     <h1>Media das Notas do Alunos</h1>
    
     <main>
-        <div>
+        <div >
             <label for="Nota">Nota:  </label>
                 <input type="number">
                 <button id="btn1" onclick="adicionarNotas()">Adicionar</button>
         </div>
-        <textarea name="quadro" id=""></textarea>
+        <textarea name="quadro" id="quadro"></textarea>
     
-        <div><button id="btn2">Calcular Média</button></div>
+        <div><button id="btn2" onclick="calcularMedia()">Calcular Média</button></div>
 
         <span>A média é:</span>
 
@@ -34,30 +34,72 @@
         </div>
 
     </footer>
+
+
     
 </body>
 <script>
+    //Pegar 3 valores em um único campo de input ao adicionar a primeira nota o campo limpa para 
+    // inserir a segunda  e se repete ate a 3 nota limitando apenas 3 incerção de dados.
 
-    function adicionarNotas(){
-        const notasJ = Number(document.querySelector("input").value);
-        const arrayJ = [];
-        
-        // for(let i = 0; arrayJ.length <= 2; i++){
-        //    console.log(arrayJ[i] = notasJ);
-        // }
-        
+    // ARREI CRIADO FORA   
+    const arrayJ = [];
 
-        
-        console.log(arrayJ.push(notasJ));
-        console.log(arrayJ);
 
-       
-        
+
+        function adicionarNotas(){
+        // PRIMEIRO PEGO O INPUT SEM O VALOR POIS TEMOS QUE TER DUAS VARIÁVEIS DIFERENTES UMA PARA A SELEÇÃO DO INPUT E OUTRA PARA O VALOR DO INPUT, POIS ASSIM PODEMOS REESCREVER O VALOR DO INPUT COMO " APAGADO", ASSIM QUANDO DIGITARMOS O PRIMEIRO VALOR O CAMPO APAGA E FOCA PARA PODERMOS COLOCAR O SEGUNDO VALOR.
+        const inputJ = document.querySelector("input"); 
+        const textareaJ = document.querySelector("textarea");
+        const  divj = document.querySelector("div");
 
        
         
+        //AQUI A VARIÁVEL DO VALOR DO INPUT JÁ CONVERTENDO EM NÚMEROS
+        let valorJ = inputJ.valueAsNumber; // Se o usuário não digitar nada ele recebe NaN (Not-a Number)  então o if não valida. 
+
+        // const arrayJ = []; O ARREIY NÃO PODE SER CRIADO DENTRO DA FUNÇÃO POIS NA PRIMEIRA VER QUE ELE FOR ADICIONADO O VALOR COM A CHAMADA DA FUNÇÃO QUANDO FOR CHAMADA A SEGUNDA VEZ ELE SOBREESCREVE REINICIANDO O ARREI E FALANDO QUE ELE ESTA VAZIO E DEPOIS ADICIONA O OUTRO NÚMERO. ||iNPORTANTE|| 
+        
+        
+    
+       if( !isNaN(valorJ) && arrayJ.length <= 2){
+
+       //ADICIONANDO O VALOR DO INPUT NO ARRAY
+       arrayJ.push(valorJ);
+       
+
+      //LIMPANDO O CAMPO DO INPUT PARA INSERIR OUTRO DADO E FOCANDO NO MESMO.
+      inputJ.value = "";
+      inputJ.focus();
+
+     
+
+      textareaJ.style = "font-size: 18px; padding:10px;"
+      textareaJ.innerHTML += ` Sua nota é: ${valorJ}.\n`;
+   
+       arrayJ.length === 3 ? divj.innerHTML = "<p style='text-align:center; padding: 0px 0px 5px 0px; color: green;'> Notas adiconadas com sucesso!!</p>" : console.log("carregar uma barra");
+
+
+  
+    
+}
+
     }
 
+    function calcularMedia(){
+                    let valoresJ = 0;
+                for(let i in arrayJ){
+
+                 valoresJ += arrayJ[i];
+
+                
+                }
+
+                    console.log(valoresJ);
+      
+       
+       
+        }
 
 </script>
 </html>
