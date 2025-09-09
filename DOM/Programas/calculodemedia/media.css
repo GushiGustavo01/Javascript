@@ -54,6 +54,13 @@ textarea{
     padding: 2px 5px;
     cursor: pointer;
 }
+#btn3{
+     padding: 2px 5px;
+    cursor: pointer;
+    margin-left: 190px;
+    
+}
+
 
 footer{
         background-color: antiquewhite;

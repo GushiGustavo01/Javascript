@@ -13,6 +13,7 @@
    
     <main>
         <div >
+            <p></p>
             <label for="Nota">Nota:  </label>
                 <input type="number">
                 <button id="btn1" onclick="adicionarNotas()">Adicionar</button>
@@ -21,7 +22,7 @@
     
         <div>
             <button id="btn2" onclick="calcularMedia()">Calcular Média</button>
-            <button id="btn3"></button>
+            <button id="btn3" onclick="reset()">Novo aluno</button>
         </div>
 
         <span>A média é:</span>
@@ -41,36 +42,46 @@
 
 <script> 
      
-        const arrayJ = [];
 
-    function adicionarNotas(){
-       
-        const inputJ = document.querySelector("input"); 
-        const textareaJ = document.querySelector("textarea");
-        const  divj = document.querySelector("div");
+    
+     const arrayJ = [];
+     
+     function adicionarNotas(){
+         
+    
+         const inputJ = document.querySelector("input"); 
+         const textareaJ = document.querySelector("textarea");
+         const  pj = document.querySelector("p");
 
         let valorJ = inputJ.valueAsNumber; 
+       
         
         if( !isNaN(valorJ) && arrayJ.length <= 2){
-        
-        arrayJ.push(valorJ);
+            console.log("oi");
+            
+            arrayJ.push(valorJ);
+            console.log(arrayJ);
+
         inputJ.value = "";
-        inputJ.focus();
+        inputJ.focus()
+     
 
      
 
       textareaJ.style = "font-size: 18px; padding:10px;"
       textareaJ.innerHTML += ` Sua nota é: ${valorJ}.\n`;
    
-      arrayJ.length === 3 ? divj.innerHTML = "<p style='text-align:center; padding: 0px 0px 5px 0px;'> Notas adicionadas! </p> " : console.log("carregar uma barra");
-
-}
+      arrayJ.length === 3 ? inputJ.textContent = " Notas adicionadas!" : console.log("carregar uma barra");
+      inputJ.style = "text-align:center; margin-bottom:10px;   "
+    }
 
     }
 
     function calcularMedia(){
+
          const iconsJ = document.querySelector("#icons");
          const spanJ = document.querySelector("span");
+
          if( !isNaN(arrayJ)){
 
             spanJ.innerText = "Digite um valor no campo Notas!!";
@@ -81,9 +92,7 @@
                 for(let i in arrayJ){
 
                  valoresJ += arrayJ[i];
-
-                
-                }
+                 }
 
                 let media= valoresJ/3;
 
@@ -92,27 +101,31 @@
                     spanJ.innerText =`Sua aprovação veio sua média é ${media}! `;
                     iconsJ.innerHTML = `<i class="bi bi-check-circle-fill" style="color:green;"></i>`
                     
-                      
+                        
 
                 }else if(media < 7){
                      spanJ.style = "color:red;";
                      spanJ.innerText =`Você foi reprovado sua media é ${media}! `;
                      iconsJ.innerHTML = `<i class="bi bi-x-circle-fill" style="color:red;"></i>`;
-                       const btn2J = document.querySelector("#btn2");
                        
-                    
-
+                         
+                    }
                 }
-
-         }
-        
-       
-        }
+            }
         function reset(){
 
-          console.log("oii");
+       const  arrayJ = [];
+         
+        //  const inputJ = document.querySelector("input") 
+        //  const textareaJ = document.querySelector("textarea").innerText = "";
+        //  const  pj = document.querySelector("p").innerText = "";
+        // let valorJ = 0;
+         
+        console.log(arrayJ);
+     
 
-            arrayJ = []
+       
+            
 
 
         }
