@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Cálculo de dois números</title>
 </head>
@@ -10,19 +11,19 @@
     <main>
         <section id="container1">
             <div id="div1">
-                <span id="logo">a*</span>
+                <span id="logo"><i class="bi bi-bounding-box"></i></span>
                 <span id="nomeP">Cálculos de dois números</span>
             </div>
             <div id="div2">
                 <div>
-                    <label for="">Primeiro número:</label>
-                    <input type="number" name="" id="">
+                    <label >Primeiro número:</label>
+                    <input type="number" name="" id="numero1">
                 </div>
                 <div>
-                    <label for="">Segundo número:</label>
-                    <input type="number" name="" id="">
+                    <label >Segundo número:</label>
+                    <input type="number" name="" id="numero2">
                 </div>
-                <button>Calcular</button>
+                <button onclick="Calcular()">Calcular</button>
             </div>
         </section>
         <section id="container2">
@@ -36,38 +37,38 @@
             </div>
             <div id="coluna2">
                 <p>Primeiro Número</p>
-                <p>2</p>
-                <p>3</p>
-                <p>4</p>
-                <p>5</p>
-                <p>6</p>
+                <p class="n1"></p>
+                <p class="n1"></p>
+                <p class="n1"></p>
+                <p class="n1"></p>
+                <p class="n1"></p>
             </div>
                 
             <div id="coluna3">
                 <p>Segundo Número</p>
-                <p>2</p>
-                <p>3</p>
-                <p>4</p>
-                <p>5</p>
-                <p>6</p>
+                <p class="n2"></p>
+                <p class="n2"></p>
+                <p class="n2"></p>
+                <p class="n2"></p>
+                <p class="n2"></p>
             </div>
                 
             <div id="coluna4">
                 <p>Resultado</p>
-                <p>2</p>
-                <p>3</p>
-                <p>4</p>
-                <p>5</p>
-                <p>6</p>
+                <p id="soma"><i class="bi bi-emoji-smile"></i></p>
+                <p id="sub"><i class="bi bi-emoji-smile"></i></p>
+                <p id="mult"><i class="bi bi-emoji-smile"></i></p>
+                <p id="divi"><i class="bi bi-emoji-smile"></i></p>
+                <p id="mod"><i class="bi bi-emoji-smile"></i></p>
             </div>
                 
             <div id="coluna5">
                 <p>Situação</p>
-                <p>2</p>
-                <p>3</p>
-                <p>4</p>
-                <p>5</p>
-                <p>6</p>
+                <p><i class="bi bi-emoji-smile"></i></p>
+                <p><i class="bi bi-emoji-smile"></i>
+                <p><i class="bi bi-emoji-smile"></i>
+                <p><i class="bi bi-emoji-smile"></i>
+                <p id="resut"><i class="bi bi-emoji-smile"></i></p>
             </div>
                 
 
@@ -76,4 +77,48 @@
     </main>
     
 </body>
+<script>
+    function Calcular(){
+
+        const num1 = document.querySelector("#numero1").valueAsNumber;
+        const num2 = document.querySelector("#numero2").valueAsNumber;
+        const n1 = document.querySelectorAll(".n1");
+        const n2 = document.querySelectorAll(".n2");
+        const soma = document.querySelector("#soma");
+        const sub = document.querySelector("#sub");
+        const mult = document.querySelector("#mult");
+        const divi = document.querySelector("#divi");
+        const mod = document.querySelector("#mod");
+        const resut = document.querySelector("#resut");
+
+     
+
+        if(isNaN(num1) || isNaN(num2)){
+
+         return   alert("Digite um número!");
+        }else{
+
+            document.querySelector("#numero1").value = " ";
+            document.querySelector("#numero2").value = " ";
+         
+          n1.forEach(caixa1 =>{
+            caixa1.textContent = `${num1}`;
+          }); 
+
+          n2.forEach(caixa2 =>{
+            caixa2.textContent = `${num2}`;
+          });
+        
+          soma.textContent =`${num1 + num2}`;
+          sub.textContent = `${ num1 - num2}`;
+          mult.textContent = `${ num1 * num2}`;
+          divi.textContent = `${ num1 / num2}`;
+          mod.textContent = `${ num1 % num2}`;
+          num1 % num2  == 0 ? resut.textContent = `PAR` : resut.textContent = `IMPAR`;
+          
+          
+        }
+
+    }
+</script>
 </html>

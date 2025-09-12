@@ -80,13 +80,15 @@ background-color: #8b509629;
 
 #container2{
     padding: 30px;
- 
     height: 73%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background-color: #272727d1;
+    background-color: black;
+    background-image: url(qujia-du-1CHWUXJkeWg-unsplash.jpg);
+    background-size: contain;
+
 }
 
 p{
@@ -94,6 +96,7 @@ p{
      color: rgba(255, 255, 255, 0.956);
      text-align: center;
      padding: 25px;
+     height: 75px;
 }
  div > p:nth-child(1){
     font-size: 16px;
@@ -104,8 +107,9 @@ p{
 #coluna1{
     border:1px solid #8C5096;
     width: 300px;
+   
     background-color: var(--cor1);
-    opacity: 1;
+   font-size: 18px;
    
 }
 #coluna2{
